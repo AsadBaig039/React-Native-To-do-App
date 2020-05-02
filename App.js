@@ -26,7 +26,7 @@ export default App=()=>{
   const [getText,setText] = useState("");
   const [getList,setList] = useState([]);
   const [buttontitle,setbuttontitle] = useState('Add');
-  const[itemIndex,setitemIndex] = useState(0);
+  
   
 
 
@@ -56,7 +56,7 @@ export default App=()=>{
       }
       else{
         let newList =[...getList]
-        newList[itemIndex].data = getText
+        newList[num].data = getText
         setList(newList)
         setText("")
         setbuttontitle("Add")
@@ -76,7 +76,7 @@ export default App=()=>{
   const updateItems = (itemkey,itemindex)=>{
     setbuttontitle("update")
     setText(itemkey.data)
-    setitemIndex(itemIndex)
+     num = itemindex;
   
   }
 
